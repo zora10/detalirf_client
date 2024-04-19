@@ -23,12 +23,6 @@ export const dealAdd = (sendName, sendNumber, code, brand, name, grip, price, co
 }
 
 export const callAdd = (sendName, sendNumber) => {
-    const contactData = {
-        fields: {
-            NAME: `${sendName}`,
-            PHONE: [{ VALUE: `+${sendNumber}`, VALUE_TYPE: 'WORK' }]
-        }
-    }
     const telegram_api = '7086708799:AAFVV5zVfG1QnMen-Io1EG_mIsFon9EpJ5A';
     const id_tg = '5359516739';
     const sendAPI = `https://api.telegram.org/bot${telegram_api}/sendMessage`
