@@ -25,8 +25,6 @@ const Item = () => {
     const [phoneNumber, setPhoneNumber] = useState('')
     const [sendNumber, setSendNumber] = useState('')
     const [sendName, setSendName] = useState('')
-    const [combs, setCombs] = useState('')
-
     const sortAscending = (arr) => {
         return arr.slice().sort((a, b) => a - b)
     }
