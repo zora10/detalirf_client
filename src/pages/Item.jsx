@@ -45,9 +45,13 @@ const Item = () => {
             setSame(sameData)
             setImages(imagesData)
             setCombs(combsData)
+            // eslint-disable-next-line
             setGrips([...new Set(sameData.map(item => item.grip))])
+            // eslint-disable-next-line
             setBends(sortAscending([...new Set(sameData.map(item => item.bend))]))
+            // eslint-disable-next-line
             setRigidities(sortAscending([...new Set(sameData.map(item => item.rigidity))]))
+            // eslint-disable-next-line
             setLoading(false)
         })
         // eslint-disable-next-line
@@ -206,52 +210,6 @@ const Item = () => {
         }
     }, [chooseGrip, chooseBend, chooseRigidity, combs])
 
-    const itemCount = (grip, bend, rigidity) => {
-        if (grip && bend && rigidity) {
-            setDbCount(null)
-            let thisCount = 0
-            for (let i of combs) {
-                // eslint-disable-next-line
-                if (i.thisGrip == grip && i.thisBend == bend && i.thisRigidity == rigidity) {
-                    thisCount = i.thisCount
-                }
-            }
-            setDbCount(thisCount)
-            if (thisCount === 0) {
-                setCountColor('gray')
-            }
-            if (thisCount >= 1 && thisCount <= 5) {
-                setCountColor('gray')
-            }
-            if (thisCount >= 6 && thisCount <= 10) {
-                setCountColor('blue')
-            }
-            if (thisCount >= 11 && thisCount <= 20) {
-                setCountColor('yellow')
-            }
-            if (thisCount > 20) {
-                setCountColor('green')
-            }
-            // getCount(item.code, grip, bend, rigidity).then((data) => {
-            //     setDbCount(data)
-            //     if (Number(data) === 0) {
-            //         setCountColor('gray')
-            //     }
-            //     if (Number(data) >= 1 && Number(data) <= 5) {
-            //         setCountColor('gray')
-            //     }
-            //     if (Number(data) >= 6 && Number(data) <= 10) {
-            //         setCountColor('blue')
-            //     }
-            //     if (Number(data) >= 11 && Number(data) <= 20) {
-            //         setCountColor('yellow')
-            //     }
-            //     if (Number(data) > 20) {
-            //         setCountColor('green')
-            //     }
-            // })
-        }
-    }
 
 
     const slideLeft = () => {
@@ -403,6 +361,15 @@ const Item = () => {
         if (e.target.classList.contains('BuyBtnActive')) {
             document.querySelector('.BuyModal').classList.remove('ModalNone')
         }
+    }
+    
+    const tabClick = (e) => {
+        const all = document.getElementsByClassName('InfoTab')
+        for (let i of all) {
+            i.classList.remove('InfoSelect')
+        }
+        e.target.classList.add('InfoSelect')
+        setTab(e.target.id)
     }
 
     const closeModal = (e) => {
