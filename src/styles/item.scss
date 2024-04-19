@@ -1,0 +1,591 @@
+.ItemContainer {
+    width: calc(100%);
+    padding: 30px 0;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    color: #2c2c2c;
+    flex-direction: column;
+
+    .ItemNotFound {
+        width: calc(100% - 100px);
+        padding: 0 50px;
+        text-align: center;
+    }
+
+    .ItemCard {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .ItemSlider {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .ImageContainer {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                user-select: none;
+
+                .SliderBtn {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #d43434;
+                    border-radius: 50px;
+                    position: absolute;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.1s linear;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+                .SlideLeft {
+                    left: calc(10% - 20px);
+
+                    .SlLeft {
+                        transform: rotate(-90deg);
+                        margin-right: 3px;
+                    }
+                }
+
+                .SlideRight {
+                    right: calc(10% - 20px);
+
+                    .SlRight {
+                        transform: rotate(90deg);
+                        margin-left: 3px;
+                    }
+                }
+
+                .SliderImage {
+                    width: 80%;
+                    display: none;
+                    margin-bottom: 10px;
+
+                    img {
+                        width: 100%;
+                        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .ItemImg {
+                        width: 100%;
+                        height: 30vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #ccc;
+                    }
+                }
+
+                .Visible {
+                    display: block;
+                }
+            }
+
+            .SliderDots {
+                display: flex;
+                flex-direction: row;
+                width: 70%;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: -10px;
+
+                .ImgDot {
+                    width: 15px;
+                    height: 15px;
+                    border: solid 1px #d43434;
+                    cursor: pointer;
+                    margin-bottom: 10px;
+                }
+
+                .ImgDot+.ImgDot {
+                    margin-left: 10px;
+                }
+
+                .Active {
+                    background-color: #d43434;
+                }
+            }
+        }
+
+        .ItemParams {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+
+            .ItemBrand {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .ItemName {
+                margin-top: 10px;
+                font-size: 24px;
+            }
+
+            .ItemCode {
+                margin-top: 5px;
+                font-size: 14px;
+                opacity: 0.7;
+            }
+
+            .ItemCountContainer {
+                margin-top: 10px;
+                height: 20px;
+
+                .ItemCount {
+                    font-size: 14px;
+                    font-weight: 500;
+                    width: fit-content;
+                    padding: 2px 10px;
+                    border-radius: 10px;
+                }
+
+                .gray {
+                    background-color: #585858;
+                    color: white;
+                }
+
+                .blue {
+                    background-color: rgb(0, 145, 255);
+                    color: white;
+                }
+
+                .yellow {
+                    background-color: rgb(234, 234, 14);
+                }
+
+                .green {
+                    background-color: green;
+                    color: white;
+                }
+            }
+
+
+            .ItemPrice {
+                margin-top: 10px;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .ParamSub {
+                margin: 20px 0 10px 0;
+                font-weight: 600;
+            }
+
+            .ParamsBtns {
+                display: flex;
+                flex-direction: row;
+
+                .Param {
+                    padding: 5px 20px;
+                    border: solid 1px #d43434;
+                    font-size: 14px;
+                    font-weight: 600;
+                    transition: all 0.1s linear;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #d43434;
+                        color: white;
+                    }
+
+                    &:active {
+                        transform: scale(0.98);
+                    }
+                }
+
+                .Param+.Param {
+                    margin-left: 15px;
+                }
+
+                .Zero {
+                    pointer-events: none;
+                    border: solid 1px #585858;
+                    color: #585858;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        height: 1px;
+                        width: 113.5%;
+                        background-color: #585858;
+                        position: absolute;
+                        left: -7%;
+                        top: 49%;
+                        transform: rotate(26deg);
+                    }
+                }
+
+                .Selected {
+                    background-color: #d43434;
+                    color: white;
+                }
+            }
+
+            .ItemCount {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                user-select: none;
+
+                .CountBtn {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: solid 1px #2c2c2c;
+                    transition: all 0.1s linear;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #2c2c2c;
+                        color: white;
+                    }
+                }
+
+                .CountDigit {
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 600;
+                }
+            }
+
+            .ItemBuy {
+                margin-top: 20px;
+                padding: 10px 50px;
+                font-size: 14px;
+                font-weight: 500;
+                width: fit-content;
+                background-color: #d43434;
+                background-color: #8c8c8c;
+                color: white;
+                user-select: none;
+                transition: all 0.1s linear;
+            }
+
+            .BuyBtnActive {
+                background-color: #d43434 !important;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+        }
+    }
+
+    .ItemInfo {
+        width: 100%;
+        min-height: calc(100vh - 30px);
+        border-top: solid 3px #182443;
+
+        .InfoHeader {
+            display: flex;
+            flex-direction: row;
+            padding: 0 50px;
+
+            .InfoTab {
+                padding: 10px 20px;
+                transition: all 0.1s linear;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #1824432e;
+                }
+            }
+        }
+
+        .InfoContent {
+            width: calc(100% - 100px);
+            padding: 0 50px;
+            margin-top: 30px;
+
+            .InfoDesc {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .IDText {
+                    width: 58%;
+
+                    .InfoSub {
+                        font-size: 24px;
+                        font-weight: 500;
+                    }
+
+                    .InfoText {
+                        margin-top: 20px;
+                        line-height: 28px;
+                        display: flex;
+                        flex-direction: column;
+
+                        span+span {
+                            margin-top: 15px;
+                        }
+                    }
+                }
+
+                .IDImg {
+                    width: 38%;
+
+                    img {
+                        width: 100%;
+                        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .NoneImg {
+                        width: 100%;
+                        min-height: 150px;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #ccc;
+                    }
+                }
+            }
+
+            .SizesImg {
+                width: 60%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .Ship {
+                display: flex;
+                flex-direction: column;
+
+                .ShipSub {
+                    font-size: 18px;
+                    font-weight: 600;
+                    width: fit-content;
+                    position: relative;
+                    margin-bottom: 10px;
+
+                    &::after {
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        background-color: #2c2c2c;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0px;
+                    }
+                }
+
+                .SecondShipSub {
+                    margin-top: 25px;
+                }
+
+                .ShipList {
+                    .ListItem {
+                        line-height: 22px;
+                    }
+
+                    .ListItem+.ListItem {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .BuyModal {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .BuyForm {
+            width: 500px;
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .BuySub {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .BuyClue {
+                margin-top: 20px;
+                width: 100%;
+                font-size: 14px;
+                opacity: 0.7;
+            }
+
+            .InputName {
+                width: calc(100% - 32px);
+                margin: 5px 0 0 0;
+                padding: 10px 15px;
+                border: solid 1px #2c2c2c;
+                outline: none;
+                font-family: Montserrat;
+                font-size: 16px;
+            }
+
+            .InputContainer {
+                width: calc(100% - 32px);
+                margin-top: 5px;
+                padding: 0 15px;
+                border: solid 1px #2c2c2c;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .PreNum {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .InputNumber {
+                    width: calc(100% - 20px);
+                    height: calc(100% - 20px);
+                    padding: 10px 0;
+                    border: none;
+                    outline: none;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-weight: 400;
+                    padding: 10px 0;
+                    color: #2c2c2c;
+                }
+            }
+
+            .BuyInfo {
+                margin-top: 5px;
+                width: 100%;
+
+                span {
+                    font-size: 14px;
+                    opacity: 0.7;
+                }
+            }
+
+            .BuyCost {
+                margin-top: 20px;
+                font-weight: 600;
+            }
+
+            .BuyConfirmBtn {
+                margin-top: 20px;
+                width: calc(100% - 40px);
+                padding: 11px 20px;
+                background-color: #8c8c8c;
+                color: white;
+                text-align: center;
+                font-weight: 500;
+                transition: opacity 0.1s linear, transform 0.1s linear, background-color 0.1s linear;
+            }
+
+            .BuyConfirmActive {
+                background-color: #182443 !important;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.9;
+                }
+
+                &:active {
+                    transform: scale(0.99);
+                }
+            }
+        }
+    }
+}
+
+.ModalNone {
+    display: none !important;
+}
+
+.InfoSelect {
+    background-color: #182443 !important;
+    color: white;
+}
+
+@media (max-width: 730px) {
+    .ItemCard {
+        flex-direction: column !important;
+    }
+
+    .ItemSlider {
+        width: 100% !important;
+    }
+
+    .ItemParams {
+        width: 80% !important;
+        margin-left: 10% !important;
+    }
+
+    .SizesImg {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .ItemInfo {
+        border-top: unset !important;
+    }
+
+    .InfoHeader {
+        padding: 0 !important;
+        flex-direction: column !important;
+        background-color: #182443 !important;
+        color: white !important;
+    }
+
+    .InfoSelect {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .InfoContent {
+        padding: 0 20px !important;
+        width: calc(100% - 40px) !important;
+    }
+
+    .InfoDesc {
+        flex-direction: column-reverse !important;
+    }
+
+    .IDText {
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+
+    .IDImg {
+        width: 50% !important;
+    }
+}

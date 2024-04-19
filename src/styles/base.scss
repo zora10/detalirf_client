@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: unset;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    background-color: unset;
+    border-radius: unset;
+    border: unset;
+    cursor: pointer;
+}
+
+a {
+    color: unset;
+}
+
+input {
+    border-radius: unset;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    background-image: url('../assets/images/BG.jpg');
+    background-size: contain;
+}
+
+.AppContent {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Lock {
+    position: fixed;
+    z-index: 8;
+    opacity: 0;
+}
+
+.Block {
+    position: fixed;
+    top: 0;
+    z-index: 8;
+}
+
+.Locked {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.None {
+    display: none !important;
+}
+
+.LoaderContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoaderContainer2 {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #182443;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.LoaderLight {
+    width: 48px;
+    height: 48px;
+    border: 5px solid white;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.LoaderSmall {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.LoaderMid {
+    width: 22px;
+    height: 22px;
+    border: 3px solid white;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
