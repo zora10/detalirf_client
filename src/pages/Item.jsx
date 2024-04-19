@@ -19,12 +19,7 @@ const Item = () => {
     // eslint-disable-next-line
     const [same, setSame] = useState()
     const [images, setImages] = useState()
-    const [grips, setGrips] = useState()
-    const [bends, setBends] = useState()
-    const [rigidities, setRigidities] = useState()
     const [count, setCount] = useState(1)
-    const [dbCount, setDbCount] = useState(null)
-    const [countColor, setCountColor] = useState('gray')
     const [chooseGrip, setChooseGrip] = useState(null)
     const [chooseBend, setChooseBend] = useState(null)
     const [chooseRigidity, setChooseRigidity] = useState(null)
@@ -66,53 +61,8 @@ const Item = () => {
         count > 1 && setCount(count - 1)
     }
 
-    const gripClick = (e, grip) => {
-        const all = document.getElementsByClassName('GripParam')
-        if (e.target.classList.contains('Selected')) {
-            e.target.classList.remove('Selected')
-            setChooseGrip(null)
-            setDbCount(null)
-        } else {
-            for (let i of all) {
-                i.classList.remove('Selected')
-            }
-            e.target.classList.add('Selected')
-            setChooseGrip(grip)
-            itemCount(grip, chooseBend, chooseRigidity)
-        }
-    }
+    
 
-    const bendClick = (e, bend) => {
-        const all = document.getElementsByClassName('BendParam')
-        if (e.target.classList.contains('Selected')) {
-            e.target.classList.remove('Selected')
-            setChooseBend(null)
-            setDbCount(null)
-        } else {
-            for (let i of all) {
-                i.classList.remove('Selected')
-            }
-            e.target.classList.add('Selected')
-            setChooseBend(bend)
-            itemCount(chooseGrip, bend, chooseRigidity)
-        }
-    }
-
-    const rigidityClick = (e, rigidity) => {
-        const all = document.getElementsByClassName('RigidityParam')
-        if (e.target.classList.contains('Selected')) {
-            e.target.classList.remove('Selected')
-            setChooseRigidity(null)
-            setDbCount(null)
-        } else {
-            for (let i of all) {
-                i.classList.remove('Selected')
-            }
-            e.target.classList.add('Selected')
-            setChooseRigidity(rigidity)
-            itemCount(chooseGrip, chooseBend, rigidity)
-        }
-    }
 
     useEffect(() => {
         const gripsEls = document.getElementsByClassName('GripParam')
@@ -303,47 +253,6 @@ const Item = () => {
         }
     }
 
-    const dotClick = (e, i) => {
-        const all = document.getElementsByClassName('SliderImage')
-        for (let k of all) {
-            k.classList.remove('Visible')
-        }
-        const clicked = document.querySelector(`.Img${i}`)
-        clicked.classList.add('Visible')
-        const btns = document.getElementsByClassName('ImgDot')
-        for (let k of btns) {
-            k.classList.remove('Active')
-        }
-        e.target.classList.add('Active')
-        setVisible(i)
-    }
-
-    const tabClick = (e) => {
-        const all = document.getElementsByClassName('InfoTab')
-        for (let i of all) {
-            i.classList.remove('InfoSelect')
-        }
-        e.target.classList.add('InfoSelect')
-        setTab(e.target.id)
-    }
-
-    const formattedCount = (number) => {
-        if (Number(number) === 0) {
-            return 'Нет в наличии'
-        }
-        if (Number(number) >= 1 && Number(number) <= 5) {
-            return 'Мало'
-        }
-        if (Number(number) >= 6 && Number(number) <= 10) {
-            return 'Хватает'
-        }
-        if (Number(number) >= 11 && Number(number) <= 20) {
-            return 'Достаточно'
-        }
-        if (Number(number) > 20) {
-            return 'Много'
-        }
-    }
 
     const slideLeft = () => {
         document.querySelector(`.Img${visible}`).classList.remove('Visible')

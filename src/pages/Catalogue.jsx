@@ -10,8 +10,6 @@ import '../styles/catalogue.scss'
 import PriceFilter from "../components/PriceFilter";
 import BrandFilter from "../components/BrandFilter";
 import GripFilter from "../components/GripFilter";
-import BendFilter from "../components/BendFilter";
-import RigidityFilter from "../components/RigidityFilter";
 import { fetchBends, fetchBrands, fetchGrips, fetchItems, fetchMax, fetchRigidities, orderItems } from "../http/itemApi";
 import { useNavigate } from "react-router-dom";
 import { dealAdd } from "../http/bxApi";
@@ -95,15 +93,6 @@ export const Catalogue = observer(({ type }) => {
         document.querySelector('.GripArr').classList.toggle('Down')
     }
 
-    const setBend = () => {
-        document.querySelector('.BendFilter').classList.toggle('Invisible')
-        document.querySelector('.BendArr').classList.toggle('Down')
-    }
-
-    const setRigidity = () => {
-        document.querySelector('.RigidityFilter').classList.toggle('Invisible')
-        document.querySelector('.RigidityArr').classList.toggle('Down')
-    }
 
     const showFilter = () => {
         document.querySelector('.FiltersMobile').classList.toggle('FiltersNone')

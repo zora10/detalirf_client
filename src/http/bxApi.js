@@ -1,6 +1,5 @@
-import $ from 'jquery'
 
-export const dealAdd = (sendName, sendNumber, code, brand, name, grip, bend, rigidity, price, count, renew, height, type) => {
+export const dealAdd = (sendName, sendNumber, code, brand, name, grip, price, count,) => {
     const contactData = {
         fields: {
             NAME: `${sendName}`,

@@ -1,12 +1,10 @@
 import AppRoutes from "./AppRoutes";
 import './styles/app.scss'
 import './styles/base.scss'
-
 import logo from './assets/images/Logo.png'
 import logo2 from './assets/images/Logo2.png'
 import vk from './assets/icons/vk.png'
 import tg from './assets/icons/tg.png'
-import inst from './assets/icons/inst.png'
 import gis from './assets/icons/gis.jpeg'
 import yandex from './assets/icons/yandex.png'
 import form from './assets/images/form.jpg'
@@ -262,7 +260,7 @@ function App() {
                     <div className="FWrap2">
                         <div className="FLine"></div>
                         <div className="FRevs">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A05c7ac2f6bb13fd9702cf2a97702b28f1dd4c7f722d58e31ddef5dd4721f261a&amp;source=constructor" width="320" height="240" frameborder="0"></iframe>
+                        <iframe title='карта' src="https://yandex.ru/map-widget/v1/?um=constructor%3A05c7ac2f6bb13fd9702cf2a97702b28f1dd4c7f722d58e31ddef5dd4721f261a&amp;source=constructor" width="320" height="240" frameborder="0"></iframe>
                             <a className="FRev" href="https://yandex.ru/maps/11127/nizhnekamsk/?ll=51.830880%2C55.636801&mode=poi&poi%5Bpoint%5D=51.830326%2C55.637247&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1749574440&tab" target="_blank" rel="noreferrer">
                                 <img src={yandex} alt="" />
                                 <div>Мы на Яндекс.Картах</div>
