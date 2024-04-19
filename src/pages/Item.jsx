@@ -39,7 +39,6 @@ const Item = () => {
             setItem(itemData)
             setSame(sameData)
             setImages(imagesData)
-            setCombs(combsData)
             // eslint-disable-next-line
             setGrips([...new Set(sameData.map(item => item.grip))])
             // eslint-disable-next-line
