@@ -592,8 +592,8 @@ const Admin = () => {
                                                             <input type="text" placeholder="Цена" name="price" maxLength={9} value={changeItem.price} onChange={handleChangeItem} />
                                                             <div className="InputClue">Категория</div>
                                                             <input type="text" placeholder="Категория" name="grip" maxLength={250} value={changeItem.grip} onChange={handleChangeItem} />
-                                                            <input type="hidden" placeholder="Загиб" name="bend" maxLength={9} value={changeItem.bend} onChange={handleChangeItem} />
-                                                            <input type="hidden" placeholder="Жесткость" name="rigidity" maxLength={9} value={changeItem.rigidity} onChange={handleChangeItem} />
+                                                            <input type="hidden" placeholder="Загиб" name="bend" maxLength={9} value={123} onChange={handleChangeItem} />
+                                                            <input type="hidden" placeholder="Жесткость" name="rigidity" maxLength={9} value={123} onChange={handleChangeItem} />
                                                             <div className="InputClue">Количество</div>
                                                             <input type="text" placeholder="Количество" name="count" maxLength={9} value={changeItem.count} onChange={handleChangeItem} />
                                                             <div className="PhotoChange">
