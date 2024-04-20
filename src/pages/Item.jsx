@@ -237,7 +237,7 @@ const Item = () => {
 
     const createDeal = () => {
         if (sendName.length > 0 && sendNumber.length === 11) {
-            dealAdd(sendName, sendNumber, item.code, item.brand, item.name, item.grip, item.bend, item.rigidity, item.price, count, null, null, item.type)
+            dealAdd(sendName, sendNumber, item.code, item.brand, item.name, item.grip, item.price, count, null, null, item.type)
             orderItems(item.id, count)
             document.querySelector('.BuyModal').classList.add('ModalNone')
         }
