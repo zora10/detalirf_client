@@ -12,6 +12,7 @@ import sizes1 from '../assets/images/Sizes1.jpg'
 import sizes2 from '../assets/images/Sizes2.png'
 import { dealAdd } from "../http/bxApi";
 
+
 const Item = () => {
     const { id, code } = useParams()
     const [loading, setLoading] = useState(true)
@@ -25,10 +26,6 @@ const Item = () => {
     const [phoneNumber, setPhoneNumber] = useState('')
     const [sendNumber, setSendNumber] = useState('')
     const [sendName, setSendName] = useState('')
-    const sortAscending = (arr) => {
-        return arr.slice().sort((a, b) => a - b)
-    }
-
     useEffect(() => {
         Promise.all([
             findItem(id),
@@ -40,11 +37,7 @@ const Item = () => {
             setSame(sameData)
             setImages(imagesData)
             // eslint-disable-next-line
-            setGrips([...new Set(sameData.map(item => item.grip))])
             // eslint-disable-next-line
-            setBends(sortAscending([...new Set(sameData.map(item => item.bend))]))
-            // eslint-disable-next-line
-            setRigidities(sortAscending([...new Set(sameData.map(item => item.rigidity))]))
             // eslint-disable-next-line
             setLoading(false)
         })
@@ -94,6 +87,20 @@ const Item = () => {
         }
     }
 
+    const dotClick = (e, i) => {
+        const all = document.getElementsByClassName('SliderImage')
+        for (let k of all) {
+            k.classList.remove('Visible')
+        }
+        const clicked = document.querySelector(`.Img${i}`)
+        clicked.classList.add('Visible')
+        const btns = document.getElementsByClassName('ImgDot')
+        for (let k of btns) {
+            k.classList.remove('Active')
+        }
+        e.target.classList.add('Active')
+        setVisible(i)
+    }
     const handleBackspace = (e) => {
         if (e.keyCode === 8 || e.key === 'Backspace') {
             e.preventDefault()
@@ -293,7 +300,11 @@ const Item = () => {
                                         }
                                     </div>
                                     <div className="SliderDots">
-                                        
+                                        {images.map((image, i) => {
+                                            return (
+                                                <div key={i} className={`ImgDot Dot${i} ${i === 0 ? 'Active' : ''}`} onClick={(e) => dotClick(e, i)}></div>
+                                            )
+                                        })}
                                     </div>
                                 </div>
                                 <div className="ItemParams">

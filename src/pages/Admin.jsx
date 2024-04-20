@@ -367,7 +367,7 @@ const Admin = () => {
             document.querySelector('.restWarning').classList.add('Error')
             return
         }
-        if (changeItem.code && changeItem.brand && changeItem.name && changeItem.price && changeItem.grip && changeItem.bend && changeItem.rigidity && changeItem.count) {
+        if (changeItem.code && changeItem.brand && changeItem.name && changeItem.price && changeItem.grip && changeItem.count) {
             updateItemAndImages(changeItem.id, changeItem.code, changeItem.brand, changeItem.name, changeItem.description, changeItem.price, changeItem.grip, changeItem.bend, changeItem.rigidity, changeItem.count, changeItem.renew, changeItem.height ? changeItem.height : 1, newImages.file, newImages.files, deleteImages)
                 .then(() => {
                     if (chosen === 'original') {
@@ -580,7 +580,7 @@ const Admin = () => {
                                                         :
                                                         <div className="CreateContainer">
                                                             <div className="CreateSub">Редактирование товара</div>
-                                                            <div className="InputClue">Артикул</div>
+                                                            <div className="InputClue">пизда</div>
                                                             <input type="text" placeholder="Артикул" name="code" maxLength={250} value={changeItem.code} onChange={handleChangeItem} />
                                                             <div className="InputClue">Фирма</div>
                                                             <input type="text" placeholder="Фирма" name="brand" maxLength={250} value={changeItem.brand} onChange={handleChangeItem} />
@@ -678,7 +678,7 @@ const Admin = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="files FileClear origfilesClear" id="origfiles" name="files" onClick={clearFiles}>Очистить поле</div>
-                                                            <div className="CreateWarning origWarning">Заполните все поля!</div>
+                                                            <div className="CreateWarning origWarning">Заполните все хуи поля!</div>
                                                             <div className="CreateItemBtn" onClick={changeConfirm}>Сохранить</div>
                                                             <div className="CreateCancelItemBtn" onClick={cancelChange}>Отменить</div>
                                                         </div>
@@ -770,7 +770,7 @@ const Admin = () => {
                                                 </div>
                                             </div>
                                             <div className="files FileClear origfilesClear" id="origfiles" name="files" onClick={clearFiles}>Очистить поле</div>
-                                            <div className="CreateWarning origWarning">Заполните все поля!</div>
+                                            <div className="CreateWarning origWarning">Заполните все пизды поля!</div>
                                             <div className="CreateWarning origError">Такой товар уже существует!</div>
                                             <div className="CreateItemBtn" onClick={createNewItem}>Создать</div>
                                             <div className="CreateCancelItemBtn" onClick={cancelCreate}>Отменить</div>
@@ -848,7 +848,7 @@ const Admin = () => {
                                                             :
                                                             <div className="CreateContainer">
                                                                 <div className="CreateSub">Редактирование товара</div>
-                                                                <div className="InputClue">Артикул</div>
+                                                                <div className="InputClue">хуй</div>
                                                                 <input type="text" placeholder="Артикул" name="code" maxLength={250} value={changeItem.code} onChange={handleChangeItem} />
                                                                 <div className="InputClue">Фирма</div>
                                                                 <input type="text" placeholder="Фирма" name="brand" maxLength={250} value={changeItem.brand} onChange={handleChangeItem} />
@@ -948,7 +948,7 @@ const Admin = () => {
                                                                     </div>
                                                                 </div>
                                                                 <div className="files FileClear repfilesClear" id="repfiles" name="files" onClick={clearFiles}>Очистить поле</div>
-                                                                <div className="CreateWarning repWarning">Заполните все поля!</div>
+                                                                <div className="CreateWarning repWarning">Заполните все блядоты поля!</div>
                                                                 <div className="CreateItemBtn" onClick={changeConfirm}>Сохранить</div>
                                                                 <div className="CreateCancelItemBtn" onClick={cancelChange}>Отменить</div>
                                                             </div>
@@ -1041,7 +1041,7 @@ const Admin = () => {
                                                         </div>
                                                     </div>
                                                     <div className="files FileClear repfilesClear" id="repfiles" name="files" onClick={clearFiles}>Очистить поле</div>
-                                                    <div className="CreateWarning repWarning">Заполните все поля!</div>
+                                                    <div className="CreateWarning repWarning">Заполните все хуеверты поля!</div>
                                                     <div className="CreateWarning repError">Такой товар уже существует!</div>
                                                     <div className="CreateItemBtn" onClick={createNewItem}>Создать</div>
                                                     <div className="CreateCancelItemBtn" onClick={cancelCreate}>Отменить</div>
@@ -1121,7 +1121,7 @@ const Admin = () => {
                                                                 :
                                                                 <div className="CreateContainer">
                                                                     <div className="CreateSub">Редактирование товара</div>
-                                                                    <div className="InputClue">Артикул</div>
+                                                                    <div className="InputClue">бляль</div>
                                                                     <input type="text" placeholder="Артикул" name="code" maxLength={250} value={changeItem.code} onChange={handleChangeItem} />
                                                                     <div className="InputClue">Фирма</div>
                                                                     <input type="text" placeholder="Фирма" name="brand" maxLength={250} value={changeItem.brand} onChange={handleChangeItem} />
@@ -1139,7 +1139,7 @@ const Admin = () => {
                                                                     <input type="text" placeholder="Высота" name="height" maxLength={9} value={changeItem.height} onChange={handleChangeItem} />
                                                                     <div className="InputClue">Ремонт</div>
                                                                     <input type="text" placeholder="Ремонт" name="renew" maxLength={250} value={changeItem.renew} onChange={handleChangeItem} />
-                                                                    <div className="CreateWarning restWarning">Заполните все поля!</div>
+                                                                    <div className="CreateWarning restWarning">Заполните все суки поля!</div>
                                                                     <div className="CreateItemBtn" onClick={changeConfirm}>Сохранить</div>
                                                                     <div className="CreateCancelItemBtn" onClick={cancelChange}>Отменить</div>
                                                                 </div>
@@ -1171,7 +1171,7 @@ const Admin = () => {
                                                         <input type="text" placeholder="Высота" name="height" maxLength={9} value={data.height} onChange={handleChange} />
                                                         <div className="InputClue">Ремонт</div>
                                                         <input type="text" placeholder="Ремонт" name="renew" maxLength={250} value={data.renew} onChange={handleChange} />
-                                                        <div className="CreateWarning restWarning">Заполните все поля!</div>
+                                                        <div className="CreateWarning restWarning">Заполните все ебанаты поля!</div>
                                                         <div className="CreateWarning restError">Такой товар уже существует!</div>
                                                         <div className="CreateItemBtn" onClick={createOldItem}>Создать</div>
                                                         <div className="CreateCancelItemBtn" onClick={cancelCreate}>Отменить</div>
