@@ -8,7 +8,7 @@ export const GripFilter = observer(() => {
     const [checked, setChecked] = useState([])
 
     const check = (grip) => {
-        const checker = document.querySelector(`.Grip${grip}`)
+        const checker = document.querySelector(`.Grip${grip.split(' ').join('')}`)
         checker.classList.toggle('Checked')
         let newChecked = checked
         if (checker.classList.contains('Checked')) {
@@ -25,7 +25,7 @@ export const GripFilter = observer(() => {
             {catalogue.grips.map((grip, i) => {
                 return (
                     <div key={i} id={grip} className="GripChecker" onClick={() => check(grip)}>
-                        <div id={grip} className={`GripCheckBox Grip${grip}`}></div>
+                        <div id={grip} className={`GripCheckBox Grip${grip.split(' ').join('')}`}></div>
                         <div id={grip}>{grip}</div>
                     </div>
                 )
