@@ -3,7 +3,7 @@ export const dealAdd = (sendName, sendNumber, code, brand, name, grip, price, co
     
 
     const telegram_api = '7086708799:AAFVV5zVfG1QnMen-Io1EG_mIsFon9EpJ5A';
-    const id_tg = '5359516739';
+    const id_tg = '1449401216';
     const sendAPI = `https://api.telegram.org/bot${telegram_api}/sendMessage`
     const texttt = `Заявка с сайта\nИмя : ${sendName}\nНомер : ${sendNumber}\nАртикул : ${code}\nТовар : ${name}\nФирма : ${brand}\nКатегория : ${grip}\nЦена : ${price}\nКоличество : ${count}`
     try {
@@ -24,7 +24,7 @@ export const dealAdd = (sendName, sendNumber, code, brand, name, grip, price, co
 
 export const callAdd = (sendName, sendNumber) => {
     const telegram_api = '7086708799:AAFVV5zVfG1QnMen-Io1EG_mIsFon9EpJ5A';
-    const id_tg = '5359516739';
+    const id_tg = '1449401216';
     const sendAPI = `https://api.telegram.org/bot${telegram_api}/sendMessage`
     const texttt = `Заявка с сайта\nИмя : ${sendName}\nНомер : ${sendNumber}`
     try {
@@ -49,7 +49,7 @@ export const callAdd = (sendName, sendNumber) => {
 export const formAdd = (sendNumber) => {
     
     const telegram_api = '7086708799:AAFVV5zVfG1QnMen-Io1EG_mIsFon9EpJ5A';
-    const id_tg = '5359516739';
+    const id_tg = '1449401216';
     const sendAPI = `https://api.telegram.org/bot${telegram_api}/sendMessage`
     const texttt = `Заявка с сайта\nИмя : Без Имени\nНомер : ${sendNumber}`
     try {
