@@ -44,7 +44,7 @@ export const Catalogue = observer(({ type }) => {
             await fetchItems(catalogue.brands, catalogue.grips, catalogue.bends, catalogue.rigidities, type, catalogue.min, catalogue.max, catalogue.limit, catalogue.page).then((data) => {
                 if (data) {
                     catalogue.setItems(data)
-                    setPages(Math.ceil(data.count / catalogue.limit))
+                    setPages(Math.ceil(data.count.length / catalogue.limit))
                 }
                 setLoading(false)
             })
